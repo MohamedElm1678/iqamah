@@ -1,0 +1,5 @@
+davis
+100
+monitor
+http://albara.ramli.net/iqamah/
+24
