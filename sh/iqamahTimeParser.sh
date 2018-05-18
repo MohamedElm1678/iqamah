@@ -19,7 +19,7 @@ fi
 
 #Delete all Temp. Files
 rm /home/pi/iqamah/data/tmp.txt
-rm /home/pi/iqamah/data/data/tmp2.txt
+rm /home/pi/iqamah/data/tmp2.txt
 
 #################### Other Functions/Ways that Didn't work ####################
 #Another way to remove : from the times
