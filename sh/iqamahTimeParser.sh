@@ -1,25 +1,25 @@
 #!/bin/bash
 
 #This sh runs every day once to parse Athan and Iqamah times from server, work only in monitor
-if [ "$(sed '3q;d' /home/pi/rpiMasjidDisplay/config.txt)" != 'mic' ]; then
+if [ "$(sed '3q;d' vconfig.txt)" != 'mic' ]; then
 #Download Iqamah Times for Davis from Server
-wget -q "$(sed '4q;d' /home/pi/rpiMasjidDisplay/config.txt)api.php?city=$(sed '1q;d' /home/pi/rpiMasjidDisplay/config.txt)&id=0" -O /home/pi/rpiMasjidDisplay/data/tmp.txt
+wget -q "$(sed '4q;d' /home/pi/iqamah/config.txt)api.php?city=$(sed '1q;d' /home/pi/iqamah/config.txt)&id=0" -O /home/pi/iqamah/data/tmp.txt
 
 #Extract Salat Name and Time from Text File
-awk -F'<BR>' '{for (i=1;i<=NF;i++) print $i}' /home/pi/rpiMasjidDisplay/data/tmp.txt > /home/pi/rpiMasjidDisplay/data/tmp2.txt
+awk -F'<BR>' '{for (i=1;i<=NF;i++) print $i}' /home/pi/iqamah/data/tmp.txt > /home/pi/iqamah/data/tmp2.txt
 
 #Check Number of Ljnes in Temp File
-lineCheck=$(wc -l < /home/pi/rpiMasjidDisplay/data/tmp2.txt)
+lineCheck=$(wc -l < /home/pi/iqamah/data/tmp2.txt)
 
 if [ $lineCheck = "19" ]
     then
 	#Remove ':' Symbol from the Extracted Time (for comparison purpose)
-	sed 's/://' /home/pi/rpiMasjidDisplay/data/tmp2.txt > /home/pi/rpiMasjidDisplay/data/parsedIqamah.csv
+	sed 's/://' /home/pi/iqamah/data/tmp2.txt > /home/pi/iqamah/data/parsedIqamah.csv
 fi
 
 #Delete all Temp. Files
-rm /home/pi/rpiMasjidDisplay/data/tmp.txt
-rm /home/pi/rpiMasjidDisplay/data/tmp2.txt
+rm /home/pi/iqamah/data/tmp.txt
+rm /home/pi/iqamah/data/data/tmp2.txt
 
 #################### Other Functions/Ways that Didn't work ####################
 #Another way to remove : from the times
