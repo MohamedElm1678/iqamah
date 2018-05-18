@@ -2,7 +2,7 @@
 Iqamah times
 
 
-# git clone https://github.com/zedanAmr/rpiMasjidDisplay.git
+# git clone https://github.com/albararamli/iqamah.git
 
 # cd /home/pi/iqamah/sh ;chmod +x *.sh
 
