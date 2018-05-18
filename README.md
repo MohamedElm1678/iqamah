@@ -4,7 +4,7 @@ Iqamah times
 
 # git clone https://github.com/zedanAmr/rpiMasjidDisplay.git
 
-# cd /home/pi/rpiMasjidDisplay/sh ;chmod +x *.sh
+# cd /home/pi/iqamah/sh ;chmod +x *.sh
 
 # crontab -e
 
@@ -12,11 +12,11 @@ Iqamah times
 
 #Update parsedIqamah.csv File Once Every Day 15 min after  Midnight
 
-00 03 * * * /home/pi/rpiMasjidDisplay/sh/iqamahTimeParser.sh
+00 03 * * * /home/pi/iqamah/sh/iqamahTimeParser.sh
 
 #Run screenTimeCheck.py Script Every 5 min
 
-*/5 * * * * sudo python /home/pi/rpiMasjidDisplay/py/screenTimeCheck.py
+*/5 * * * * sudo python /home/pi/iqamah/py/screenTimeCheck.py
 
 #Restart RPi Everyday at 2:15AM
 
@@ -24,11 +24,11 @@ Iqamah times
 
 #Download Local HTML
 
-15 03 * * * /home/pi/rpiMasjidDisplay/sh/local.sh
+15 03 * * * /home/pi/iqamah/sh/local.sh
 
 #Move Mouse Location
 
-#00 * * * * /home/pi/rpiMasjidDisplay/sh/MouseMove.sh
+#00 * * * * /home/pi/iqamah/sh/MouseMove.sh
 
 # cd ~/.config/lxsession/LXDE-pi ; sudo nano autostart 
 
@@ -40,21 +40,21 @@ Iqamah times
 
 @point-rpi
 
-sudo sh /home/pi/rpiMasjidDisplay/sh/MouseMove.sh
+sudo sh /home/pi/iqamah/sh/MouseMove.sh
 
-sudo sh /home/pi/rpiMasjidDisplay/sh/Chromium_Open.sh
+sudo sh /home/pi/iqamah/sh/Chromium_Open.sh
 
-sudo sh /home/pi/rpiMasjidDisplay/sh/iqamahTimeParser.sh
+sudo sh /home/pi/iqamah/sh/iqamahTimeParser.sh
 
-sudo python /home/pi/rpiMasjidDisplay/py/screenTimeCheck.py
+sudo python /home/pi/iqamah/py/screenTimeCheck.py
 
-sudo python /home/pi/rpiMasjidDisplay/py/mic_ini.py
+sudo python /home/pi/iqamah/py/mic_ini.py
 
-sudo python /home/pi/rpiMasjidDisplay/py/mic_listen_online.py
+sudo python /home/pi/iqamah/py/mic_listen_online.py
 
-sudo python /home/pi/rpiMasjidDisplay/py/internet.py
+sudo python /home/pi/iqamah/py/internet.py
 
-sudo python /home/pi/rpiMasjidDisplay/py/sensor.py
+sudo python /home/pi/iqamah/py/sensor.py
 
 
 
