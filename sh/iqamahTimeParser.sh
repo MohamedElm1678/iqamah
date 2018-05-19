@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #This sh runs every day once to parse Athan and Iqamah times from server, work only in monitor
-if [ "$(sed '3q;d' vconfig.txt)" != 'mic' ]; then
+if [ "$(sed '3q;d' /home/pi/iqamah/config.txt)" != 'mic' ]; then
 #Download Iqamah Times for Davis from Server
 wget -q "$(sed '4q;d' /home/pi/iqamah/config.txt)api.php?city=$(sed '1q;d' /home/pi/iqamah/config.txt)&id=0" -O /home/pi/iqamah/data/tmp.txt
 
