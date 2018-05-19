@@ -22,11 +22,11 @@ status_local=-1 #green led status 0,1
 status_screen=0 #screen status 0,1
 status_autoscreen=0 #screen status 0,1
 status_chrome=0 #chrome status 0,1
-file_relay=dir_local_mic+'mic_status_relay.txt'
-file_web=dir_local_mic+'mic_status_web.txt'
-file_screen=dir_local+'screen_status.txt'
-file_autoscreen=dir_local+'autoscreen_status.txt'
-file_chrome=dir_local+'chrome_status.txt'
+file_relay=path_data+'mic_status_relay.txt'
+file_web=path_data+'mic_status_web.txt'
+file_screen=path_data+'screen_status.txt'
+file_autoscreen=path_data+'autoscreen_status.txt'
+file_chrome=path_data+'chrome_status.txt'
 ####
 while True:
 ######
