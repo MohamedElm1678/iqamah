@@ -12,9 +12,9 @@ dir_local=path_sh
 dir_local_mic=path_py
 
 status_web=-1 #blue led status 0,1
-file_web=path_py+'mic_status_web.txt'
+file_web=path_data+'mic_status_web.txt'
 #status_local=0 #green led status 0,1
-file_relay=path_py+'mic_status_relay.txt'
+file_relay=path_data+'mic_status_relay.txt'
 
 GPIO.setmode(GPIO.BOARD)
 
