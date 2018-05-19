@@ -8,9 +8,11 @@ if [ -z "$MY_PATH" ] ; then
   exit 1  # fail
 fi
 #echo "$MY_PATH"
+CONFIG_FILE="$MY_PATH/../"config.txt
+DATA_PATH="$MY_PATH/../data/"
 
-echo "1" > "$MY_PATH/../data/"chrome_status.txt
+echo "1" > "$MY_PATH"chrome_status.txt
 # Open Chromium Browser Instance, if the device is not mic
-if [ "$(sed '3q;d' "$MY_PATH/../"config.txt)" != 'mic' ]; then
-  chromium-browser --kiosk --incognito --no-sandbox  --noerrdialogs -disable-session-crashed-bubble --disable-infobars "$(sed '4q;d' "$MY_PATH/../"config.txt)screen.php?size=$(sed '5q;d' "$MY_PATH/../"config.txt)&icdx=1&city=$(sed '1q;d' "$MY_PATH/../"config.txt)"
+if [ "$(sed '3q;d' "$CONFIG_FILE")" != 'mic' ]; then
+  chromium-browser --kiosk --incognito --no-sandbox  --noerrdialogs -disable-session-crashed-bubble --disable-infobars "$(sed '4q;d' "$CONFIG_FILE")screen.php?size=$(sed '5q;d' "$CONFIG_FILE")&icdx=1&city=$(sed '1q;d' "$CONFIG_FILE")"
 fi
