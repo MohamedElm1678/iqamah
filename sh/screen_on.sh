@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "1" > /home/pi/iqamah/sh/screen_status.txt
+echo "1" > /home/pi/iqamah/data/screen_status.txt
 if [ "$(sed '3q;d' /home/pi/iqamah/config.txt)" != 'mic' ]; then
 vcgencmd display_power 1
 sudo echo 0 > /sys/class/backlight/rpi_backlight/bl_power # LCD 7'' turn on with 0 tag
