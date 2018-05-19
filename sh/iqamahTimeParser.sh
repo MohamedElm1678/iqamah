@@ -10,9 +10,9 @@ fi
 #echo "$MY_PATH"
 CONFIG_FILE="$MY_PATH/../"config.txt
 DATA_PATH="$MY_PATH/../data/"
-TMP1_PATH="$MY_PATH/../data/"tmp.txt
-TMP2_PATH="$MY_PATH/../data/"tmp2.txt
-CSV_PATH="$MY_PATH/../data/"parsedIqamah.csv
+TMP1_PATH="$DATA_PATH"tmp.txt
+TMP2_PATH="$DATA_PATH"tmp2.txt
+CSV_PATH="$DATA_PATH"parsedIqamah.csv
 
 #This sh runs every day once to parse Athan and Iqamah times from server, work only in monitor
 if [ "$(sed '3q;d' "$CONFIG_FILE")" != 'mic' ]; then
