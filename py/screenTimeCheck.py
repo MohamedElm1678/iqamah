@@ -51,14 +51,14 @@ Midnight = Midnight.time()
 
 #while True:
 # Check Server Screen Status
-autoscreen_file=path_sh+"autoscreen_status.txt"
+autoscreen_file=path_data+"autoscreen_status.txt"
 if os.path.exists(autoscreen_file):
     autoScreenStatusFile = open(autoscreen_file, "r")
     autoScreenStatus = autoScreenStatusFile.readline(1)
 else:
     autoScreenStatus = "1"
 
-screen_file=path_sh+"screen_status.txt"
+screen_file=path_data+"screen_status.txt"
 if os.path.exists(screen_file):
     screenStatusFile = open(screen_file, "r")
     screenStatus = screenStatusFile.readline(1)
