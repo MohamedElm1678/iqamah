@@ -22,7 +22,7 @@ time.sleep(15)
 tx = time.asctime( time.localtime(time.time()) )
 print "Starting ",tx
 ppx="Starting "+tx
-os.system("echo \""+ppx+"\" >> "+path_sh+"internet_status.txt")
+os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
 inix0=is_connected()
 time.sleep(2)
 inix1=is_connected()
@@ -35,7 +35,7 @@ nextx=inix
 
 
 dir_local=path_sh
-file_chrome=dir_local+'chrome_status.txt'
+file_chrome=path_data+'chrome_status.txt'
 pass_ini=1
 while 1:
   ##print "Loop"
@@ -59,13 +59,13 @@ while 1:
 
     print "From=", inix, " To=" , nextx, " ", tx
     ppx="From="+ str(inix)+ " To=" + str(nextx)+ " "+tx
-    os.system("echo \""+ppx+"\" >> "+path_sh+"internet_status.txt")
+    os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
     if nextx == True:
       pass_ini=1
       tx = time.asctime( time.localtime(time.time()) )
       print "Wake", tx
       ppx="Wake "+tx
-      os.system("echo \""+ppx+"\" >> "+path_sh+"internet_status.txt")
+      os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
       os.system(dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
@@ -76,7 +76,7 @@ while 1:
       tx = time.asctime( time.localtime(time.time()) )
       print "Sleep", tx
       ppx="Sleep "+tx
-      os.system("echo \""+ppx+"\" >> "+path_sh+"internet_status.txt")
+      os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
       os.system(dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
@@ -89,7 +89,7 @@ while 1:
           tx = time.asctime( time.localtime(time.time()) )
           print "Down=[", pass_ini, "] ", tx
           ppx="Down=["+str(pass_ini)+"] "+tx
-          os.system("echo \""+ppx+"\" >> "+path_sh+"internet_status.txt")
+          os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
           os.system(dir_local+'Chromium_Close.sh')
           time.sleep(1.0)
           ##do_it(1,file_chrome)
