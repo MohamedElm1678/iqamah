@@ -6,6 +6,8 @@ Iqamah times
 
 # cd /home/pi/iqamah/sh ;chmod +x *.sh
 
+# cd /home/pi/iqamah/py ;chmod +x *.py
+
 # crontab -e
 
 ####Script Star####
