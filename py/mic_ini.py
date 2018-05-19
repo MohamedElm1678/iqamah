@@ -34,8 +34,8 @@ GPIO.setup(37, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)#the Red switch
 
 status_web=-1 #blue led status 0,1
 status_local=-1 #green led status 0,1
-file_relay=path_py+'mic_status_relay.txt'
-file_web=path_py+'mic_status_web.txt'
+file_relay=path_data+'mic_status_relay.txt'
+file_web=path_data+'mic_status_web.txt'
 ############################################################################
 i=0
 x=0
