@@ -1,6 +1,16 @@
 #!/bin/bash
-echo "1" > /home/pi/iqamah/data/chrome_status.txt
+
+MY_PATH="`dirname \"$0\"`"              # relative
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"  # absolutized and normalized
+if [ -z "$MY_PATH" ] ; then
+  # error; for some reason, the path is not accessible
+  # to the script (e.g. permissions re-evaled after suid)
+  exit 1  # fail
+fi
+#echo "$MY_PATH"
+
+echo "1" > "$MY_PATH/../data/"chrome_status.txt
 # Open Chromium Browser Instance, if the device is not mic
-if [ "$(sed '3q;d' /home/pi/iqamah/config.txt)" != 'mic' ]; then
-  chromium-browser --kiosk --incognito --no-sandbox  --noerrdialogs -disable-session-crashed-bubble --disable-infobars "$(sed '4q;d' /home/pi/iqamah/config.txt)screen.php?size=$(sed '5q;d' /home/pi/iqamah/config.txt)&icdx=1&city=$(sed '1q;d' /home/pi/iqamah/config.txt)"
+if [ "$(sed '3q;d' "$MY_PATH/../"config.txt)" != 'mic' ]; then
+  chromium-browser --kiosk --incognito --no-sandbox  --noerrdialogs -disable-session-crashed-bubble --disable-infobars "$(sed '4q;d' "$MY_PATH/../"config.txt)screen.php?size=$(sed '5q;d' "$MY_PATH/../"config.txt)&icdx=1&city=$(sed '1q;d' "$MY_PATH/../"config.txt)"
 fi
