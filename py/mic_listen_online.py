@@ -65,7 +65,7 @@ while True:
     if(title=="PI"):
         if(status=="REBOOT"):
             GPIO.cleanup()
-            os.system('reboot')
+            os_system('reboot')
 ####################
     if(title=="CHROME" and device_type!='mic'):
         if(status=="ON"):
@@ -73,18 +73,18 @@ while True:
             os.system('sh '+dir_local+'Chromium_Open.sh')
 	if(status=="OFF"):
             do_it(0,file_chrome)
-            os.system('pkill chromium')
-            os.system('sh '+dir_local+'Chromium_Close.sh')
+            os_system('pkill chromium')
+            os_system('sh '+dir_local+'Chromium_Close.sh')
 ####################
     if(title=="SCREEN" and device_type!='mic'):
         if(status=="ON"):
             #dummyVariable=1
             #vcgencmd display_power 1
-            os.system('sudo sh '+dir_local+'screen_on.sh')
+            os_system('sudo sh '+dir_local+'screen_on.sh')
         if(status=="OFF"):
             #dummyVariable=0
             #vcgencmd display_power 0
-            os.system('sudo sh '+dir_local+'screen_off.sh')
+            os_system('sudo sh '+dir_local+'screen_off.sh')
 ####################
     if(title=="AUTOSCREEN" and device_type!='mic'):
         if(status=="ON"):
