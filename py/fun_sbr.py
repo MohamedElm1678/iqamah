@@ -1,6 +1,12 @@
 import os
 import sys
 
+def os_system(command)
+    try:
+        os.system(command)
+        print "Done: "+command
+    except:
+        print "Error: "+command
 #------------------------------------------------------------------
 def swap_it(status): #swap the status from 0 to 1 or opposite
     if(status==0):
