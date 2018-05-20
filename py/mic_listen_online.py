@@ -73,7 +73,7 @@ while True:
                 do_it(1,file_chrome)
                 try:
                     time.sleep(1.0)
-                    os_system('sh '+dir_local+'Chromium_Open.sh')
+                    os_system('sh '+dir_local+'Chromium_Open.sh &')
                 except:
                     pass
 
@@ -83,7 +83,7 @@ while True:
                 try:
                     os_system('pkill chromium')
                     time.sleep(1.0)
-                    os_system('sh '+dir_local+'Chromium_Close.sh')
+                    os_system('sh '+dir_local+'Chromium_Close.sh &')
                 except:
                     pass
                 
