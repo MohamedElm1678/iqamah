@@ -80,6 +80,7 @@ while True:
             do_it(0,file_chrome)
 	    try:
             	os_system('pkill chromium')
+		time.sleep(1.0)
 		os_system('sh '+dir_local+'Chromium_Close.sh')
             except:
             	pass
