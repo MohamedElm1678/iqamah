@@ -7,6 +7,7 @@ def os_system(command):
         print "Done: "+command
     except:
         print "Error: "+command
+        pass
 #------------------------------------------------------------------
 def swap_it(status): #swap the status from 0 to 1 or opposite
     if(status==0):
