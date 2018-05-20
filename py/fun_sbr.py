@@ -4,7 +4,7 @@ import sys
 def os_system(command):
     try:
         #os.system("set +e")
-        os.system("sudo "+command)
+        os.system(""+command)
         #os.system("set -e")
         print "Done: "+command
     except:
