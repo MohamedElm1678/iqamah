@@ -1,7 +1,7 @@
 import os
 import sys
 
-def os_system(command)
+def os_system(command):
     try:
         os.system(command)
         print "Done: "+command
