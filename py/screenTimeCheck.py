@@ -76,27 +76,27 @@ if autoScreenStatus == "1":
     # Turn Screen On for Fajr
     if currentTime >= screenOnBeforeFajr and currentTime <= screenOffAfterDuha:
         if screenStatus == "0":
-            os.system("sudo sh "+path_sh+'screen_on.sh')
+            os_system(path_sh+'screen_on.sh')
 
     # Turn Screen Off After Fajr
     if currentTime > screenOffAfterDuha and currentTime <= screenOnBeforeDhuhr:
         if screenStatus == "1":
-            os.system("sudo sh "+path_sh+'screen_off.sh')
+            os_system(path_sh+'screen_off.sh')
 
     # Turn Screen On Before Dhuhr
     if currentTime > screenOnBeforeDhuhr and currentTime <= screenOffAfterIsha:
         if screenStatus == "0":
-            os.system("sudo sh "+path_sh+'screen_on.sh')
+            os_system(path_sh+'screen_on.sh')
 
     # Turn Screen Off After Isha
     if currentTime > screenOffAfterIsha:
         if screenStatus == "1":
-            os.system("sudo sh "+path_sh+'screen_off.sh')
+            os_system(path_sh+'screen_off.sh')
 
     # Turn Screen Off for the Night
     if currentTime < screenOnBeforeFajr:
         if screenStatus == "1":
-            os.system("sudo sh "+path_sh+'screen_off.sh')
+            os_system(path_sh+'screen_off.sh')
 
 # Sleep for a second before rerunning the loop
 #timeSleep.sleep(1)
