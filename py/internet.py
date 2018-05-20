@@ -22,7 +22,7 @@ time.sleep(15)
 tx = time.asctime( time.localtime(time.time()) )
 print "Starting ",tx
 ppx="Starting "+tx
-os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
+os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
 inix0=is_connected()
 time.sleep(2)
 inix1=is_connected()
@@ -59,28 +59,28 @@ while 1:
 
     print "From=", inix, " To=" , nextx, " ", tx
     ppx="From="+ str(inix)+ " To=" + str(nextx)+ " "+tx
-    os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
+    os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
     if nextx == True:
       pass_ini=1
       tx = time.asctime( time.localtime(time.time()) )
       print "Wake", tx
       ppx="Wake "+tx
-      os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
-      os.system(dir_local+'Chromium_Close.sh')
+      os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
+      os_system(dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
-      os.system(dir_local+'Chromium_Open.sh &')
+      os_system(dir_local+'Chromium_Open.sh &')
       time.sleep(1)
     else:
       pass_ini=0
       tx = time.asctime( time.localtime(time.time()) )
       print "Sleep", tx
       ppx="Sleep "+tx
-      os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
-      os.system(dir_local+'Chromium_Close.sh')
+      os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
+      os_system(dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
-      os.system(dir_local+'Chromium_Open_Local.sh &')
+      os_system(dir_local+'Chromium_Open_Local.sh &')
       time.sleep(1)
   else:
     if nextx==inix:
@@ -89,11 +89,11 @@ while 1:
           tx = time.asctime( time.localtime(time.time()) )
           print "Down=[", pass_ini, "] ", tx
           ppx="Down=["+str(pass_ini)+"] "+tx
-          os.system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
-          os.system(dir_local+'Chromium_Close.sh')
+          os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
+          os_system(dir_local+'Chromium_Close.sh')
           time.sleep(1.0)
           ##do_it(1,file_chrome)
-          os.system(dir_local+'Chromium_Open_Local.sh &')
+          os_system(dir_local+'Chromium_Open_Local.sh &')
           time.sleep(1)
         pass_ini=0
       else:
