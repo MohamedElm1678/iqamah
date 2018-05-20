@@ -69,7 +69,7 @@ while 1:
       os_system(dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
-      os_system(dir_local+'Chromium_Open.sh &')
+      os_system(dir_local+'Chromium_Open.sh')
       time.sleep(1)
     else:
       pass_ini=0
@@ -80,7 +80,7 @@ while 1:
       os_system(dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
-      os_system(dir_local+'Chromium_Open_Local.sh &')
+      os_system(dir_local+'Chromium_Open_Local.sh')
       time.sleep(1)
   else:
     if nextx==inix:
@@ -93,7 +93,7 @@ while 1:
           os_system(dir_local+'Chromium_Close.sh')
           time.sleep(1.0)
           ##do_it(1,file_chrome)
-          os_system(dir_local+'Chromium_Open_Local.sh &')
+          os_system(dir_local+'Chromium_Open_Local.sh')
           time.sleep(1)
         pass_ini=0
       else:
