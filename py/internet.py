@@ -66,7 +66,7 @@ while 1:
       print "Wake", tx
       ppx="Wake "+tx
       os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
-      os_system(dir_local+'Chromium_Close.sh')
+      os_system("sh "+dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
       os_system(dir_local+'Chromium_Open.sh')
@@ -77,10 +77,10 @@ while 1:
       print "Sleep", tx
       ppx="Sleep "+tx
       os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
-      os_system(dir_local+'Chromium_Close.sh')
+      os_system("sh "+dir_local+'Chromium_Close.sh')
       time.sleep(1.0)
       ##do_it(1,file_chrome)
-      os_system(dir_local+'Chromium_Open_Local.sh')
+      os_system("sh "+dir_local+'Chromium_Open_Local.sh')
       time.sleep(1)
   else:
     if nextx==inix:
@@ -90,10 +90,10 @@ while 1:
           print "Down=[", pass_ini, "] ", tx
           ppx="Down=["+str(pass_ini)+"] "+tx
           os_system("echo \""+ppx+"\" >> "+path_data+"internet_status.txt")
-          os_system(dir_local+'Chromium_Close.sh')
+          os_system("sh "+dir_local+'Chromium_Close.sh')
           time.sleep(1.0)
           ##do_it(1,file_chrome)
-          os_system(dir_local+'Chromium_Open_Local.sh')
+          os_system("sh "+dir_local+'Chromium_Open_Local.sh')
           time.sleep(1)
         pass_ini=0
       else:
