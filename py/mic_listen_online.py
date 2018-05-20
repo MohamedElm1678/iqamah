@@ -70,11 +70,21 @@ while True:
     if(title=="CHROME" and device_type!='mic'):
         if(status=="ON"):
             do_it(1,file_chrome)
-            os.system('sh '+dir_local+'Chromium_Open.sh')
+	    try:
+            	os_system('sh '+dir_local+'Chromium_Open.sh')
+            except:
+            	pass
+
+            
 	if(status=="OFF"):
             do_it(0,file_chrome)
-            os_system('pkill chromium')
-            os_system('sh '+dir_local+'Chromium_Close.sh')
+	    try:
+            	os_system('pkill chromium')
+		os_system('sh '+dir_local+'Chromium_Close.sh')
+            except:
+            	pass
+            
+            
 ####################
     if(title=="SCREEN" and device_type!='mic'):
         if(status=="ON"):
