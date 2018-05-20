@@ -3,7 +3,7 @@ import sys
 
 def os_system(command):
     try:
-        os.system(command+" &")
+        os.system(command)
         print "Done: "+command
     except:
         print "Error: "+command
