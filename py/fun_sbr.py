@@ -3,9 +3,9 @@ import sys
 
 def os_system(command):
     try:
-        os.system("sudo set +e")
-        os.system("sudo "+command+" &")
-        os.system("sudo set -e")
+        os.system("set +e")
+        os.system("sudo "+command)
+        os.system("set -e")
         print "Done: "+command
     except:
         print "Error: "+command
