@@ -76,3 +76,4 @@ city       =get_line_form_file(config_file,0) # davis vs sac vs brentwood
 device_id  =get_line_form_file(config_file,1) # 1 vs 2 vs 3
 device_type=get_line_form_file(config_file,2) # monitor vs mic vs ''
 app_url    =get_line_form_file(config_file,3) # http://albara.ramli.net/iqamah/
+screen_size    =get_line_form_file(config_file,4) # 27 vs 7
