@@ -77,11 +77,11 @@ else:
 if autoScreenStatus == "1":
     # Check Current Time
     currentTime = datetime.now().time()
-    if scree_size=="27":
+    if screen_size=="27":
         # Check real time screenStatus from shell
         output = subprocess.check_output("vcgencmd display_power", shell=True)
         screenStatus = output[14]
-    if scree_size=="7":
+    if screen_size=="7":
         output2 = subprocess.check_output("cat /sys/class/backlight/rpi_backlight/bl_power", shell=True)
         screenStatus = output2[0]
         if output2[0]=="0":
