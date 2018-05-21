@@ -12,18 +12,21 @@ if(device_type=='mic'):
 
 csv_file=path_data+'parsedIqamah.csv' # we assume that the csv file already exisis, in future we have to deal with the appcenece of this file
 
-# Praery Time Import from csv
-data_of_csv=get_line_form_file(csv_file,1)
-fajrAthan = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
+if os.path.exists(csv_file):
+    # Praery Time Import from csv
+    data_of_csv=get_line_form_file(csv_file,1)
+    fajrAthan = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
 
-data_of_csv=get_line_form_file(csv_file,5) 
-Duha = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
+    data_of_csv=get_line_form_file(csv_file,5) 
+    Duha = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
 
-data_of_csv=get_line_form_file(csv_file,7) 
-DhuhrAthan = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
+    data_of_csv=get_line_form_file(csv_file,7) 
+    DhuhrAthan = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
 
-data_of_csv=get_line_form_file(csv_file,17) 
-IshaIqamah = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
+    data_of_csv=get_line_form_file(csv_file,17) 
+    IshaIqamah = datetime.combine(date.today(), time(int(data_of_csv[0:2]),int(data_of_csv[2:4])))
+else:
+    sys.exit() 
 
 # Set Delay on Screen On and Off Times
 screenOnBeforeFajr = fajrAthan - timedelta(hours=1)
@@ -105,14 +108,8 @@ if autoScreenStatus == "1":
             os_system(path_sh+'screen_on.sh')
             print "ON"
 
-    # Turn Screen Off After Isha
-    if currentTime >= screenOffAfterIsha:
-        if screenStatus == "1":
-            os_system(path_sh+'screen_off.sh')
-            print "OFF"
-
-    # Turn Screen Off for the Night
-    if currentTime < screenOnBeforeFajr:
+    # Turn Screen Off After Isha # Turn Screen Off for the Night
+    if currentTime >= screenOffAfterIsha or currentTime < screenOnBeforeFajr:
         if screenStatus == "1":
             os_system(path_sh+'screen_off.sh')
             print "OFF"
