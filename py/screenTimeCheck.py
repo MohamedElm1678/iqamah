@@ -111,13 +111,17 @@ if autoScreenStatus == "1":
             comm="off"
             
     if comm=="on":
+        '''
         os_system('sh '+dir_local+'Chromium_Open.sh &')
         time.sleep(1.0)
+        '''
         os_system('sh '+dir_local+'screen_on.sh')
         
-    if comm=="on":       
+    if comm=="on":     
+        '''
         os_system('sh '+dir_local+'Chromium_Close.sh &')
         time.sleep(1.0)
+        '''
         os_system('sh '+dir_local+'screen_off.sh')
         
 print str(currentTime)+"="+str(screenOnBeforeDhuhr)+" "+str(currentTime) +"="+ str(screenOffAfterIsha)
