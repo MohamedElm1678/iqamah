@@ -78,7 +78,7 @@ while True:
                     pass
 
                 
-        if(status=="OFF"):
+            if(status=="OFF"):
                 do_it(0,file_chrome)
                 try:
                     os_system('pkill chromium')
@@ -93,14 +93,18 @@ while True:
             if(status=="ON"):
                 #dummyVariable=1
                 #vcgencmd display_power 1
+                '''
                 os_system('sh '+dir_local+'Chromium_Open.sh &')
                 time.sleep(1.0)
+                '''
                 os_system('sh '+dir_local+'screen_on.sh')
             if(status=="OFF"):
                 #dummyVariable=0
                 #vcgencmd display_power 0
+                '''
                 os_system('sh '+dir_local+'Chromium_Close.sh &')
                 time.sleep(1.0)
+                '''
                 os_system('sh '+dir_local+'screen_off.sh')
     ####################
         if(title=="AUTOSCREEN" and device_type!='mic'):
