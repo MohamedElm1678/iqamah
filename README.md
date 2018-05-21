@@ -1,62 +1,10 @@
 # Iqamah
 Iqamah times
 
+New commnads:
 
-# git clone https://github.com/albararamli/iqamah.git
-
-# cd /home/pi/iqamah/sh ; chmod +x *.sh ; cd /home/pi/iqamah/py ; chmod +x *.py
-
-# crontab -e
-
-####Script Star####
-
-#Update parsedIqamah.csv File Once Every Day 15 min after  Midnight
-
-00 03 * * * /home/pi/iqamah/sh/iqamahTimeParser.sh
-
-#Run screenTimeCheck.py Script Every 5 min
-
-*/5 * * * * sudo python /home/pi/iqamah/py/screenTimeCheck.py
-
-#Restart RPi Everyday at 2:15AM
-
-15 02 * * * reboot
-
-#Download Local HTML
-
-15 03 * * * /home/pi/iqamah/sh/local.sh
-
-#Move Mouse Location
-
-#00 * * * * /home/pi/iqamah/sh/MouseMove.sh
-
-# cd ~/.config/lxsession/LXDE-pi ; sudo nano autostart 
-
-@lxpanel --profile LXDE-pi
-
-@pcmanfm --desktop --profile LXDE-pi
-
-@xscreensaver -no-splash
-
-@point-rpi
-
-sudo sh /home/pi/iqamah/sh/MouseMove.sh
-
-sudo sh /home/pi/iqamah/sh/Chromium_Open.sh
-
-sudo sh /home/pi/iqamah/sh/iqamahTimeParser.sh
-
-sudo python /home/pi/iqamah/py/screenTimeCheck.py
-
-sudo python /home/pi/iqamah/py/mic_ini.py
-
-sudo python /home/pi/iqamah/py/mic_listen_online.py
-
-sudo python /home/pi/iqamah/py/internet.py
-
-sudo python /home/pi/iqamah/py/sensor.py
-
-
+# cd ~ ; rm -Rf iqamah ; git clone https://github.com/albararamli/iqamah.git ; cd ~/iqamah/sh/ ; sh ./install.sh ; reboot
+ 
 
 # sudo nano /boot/config.txt
 
