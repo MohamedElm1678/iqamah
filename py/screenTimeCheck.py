@@ -73,6 +73,8 @@ else:
     screenStatus = "0"
     print "screen file Not exsist="+screenStatus
 '''
+comm=""
+ran=""
 # If There is No Override, Run Screen Check Schedule
 if autoScreenStatus == "1":
     # Check Current Time
@@ -93,22 +95,26 @@ if autoScreenStatus == "1":
     if currentTime >= screenOnBeforeFajr and currentTime < screenOffAfterDuha:
         if screenStatus == "0":
             comm="on"
+            ran="1"
 
     # Turn Screen Off After Fajr
     if currentTime >= screenOffAfterDuha and currentTime < screenOnBeforeDhuhr:
         if screenStatus == "1":
             comm="off"
-
+            ran="2"
+            
     # Turn Screen On Before Dhuhr
     if currentTime >= screenOnBeforeDhuhr and currentTime < screenOffAfterIsha:
         print "HERE"
         if screenStatus == "0":
             comm="on"
-
+            ran="3"
+            
     # Turn Screen Off After Isha # Turn Screen Off for the Night
     if currentTime >= screenOffAfterIsha or currentTime < screenOnBeforeFajr:
         if screenStatus == "1":
             comm="off"
+            ran="4"
             
     if comm=="on":
         '''
@@ -123,7 +129,11 @@ if autoScreenStatus == "1":
         time.sleep(1.0)
         '''
         os_system('sh '+dir_local+'screen_off.sh')
-        
-print str(currentTime)+"="+str(screenOnBeforeDhuhr)+" "+str(currentTime) +"="+ str(screenOffAfterIsha)
+
+print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOnBeforeFajr)+" and " +str(currentTime )+"<"+str(  screenOffAfterDuha)
+print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOffAfterDuha)+" and " +str(currentTime )+"<"+str(  screenOnBeforeDhuhr)
+print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOnBeforeDhuhr)+" and "+str(currentTime )+"<"+str(  screenOffAfterIsha)
+print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOffAfterIsha)+" or "  +str(currentTime )+"<"+str(  screenOnBeforeFajr)
+
 # Sleep for a second before rerunning the loop
 #timeSleep.sleep(1)
