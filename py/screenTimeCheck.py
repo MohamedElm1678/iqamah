@@ -114,26 +114,26 @@ if autoScreenStatus == "1":
             
     # Turn Screen Off After Isha # Turn Screen Off for the Night
     if currentTime >= screenOffAfterIsha or currentTime < screenOnBeforeFajr:
-        print "Turn Screen Off After Isha # Turn Screen Off for the Night"
+        print "Turn Screen Off After Isha , Turn Screen Off for the Night"
         if screenStatus == "1":
             comm="off"
             ran="4"
             
     if comm=="on":
-        '''
         print "Turn ON"
+        '''
         os_system('sh '+dir_local+'Chromium_Open.sh &')
         time.sleep(1.0)
         '''
-        os_system('sh '+dir_local+'screen_on.sh')
+        os_system('sh '+path_sh+'screen_on.sh')
         
     if comm=="off":     
-        '''
         print "Turn OFF"
+        '''
         os_system('sh '+dir_local+'Chromium_Close.sh &')
         time.sleep(1.0)
         '''
-        os_system('sh '+dir_local+'screen_off.sh')
+        os_system('sh '+path_sh+'screen_off.sh')
 
 print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOnBeforeFajr)+" and " +str(currentTime )+"<"+str(  screenOffAfterDuha)
 print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOffAfterDuha)+" and " +str(currentTime )+"<"+str(  screenOnBeforeDhuhr)
