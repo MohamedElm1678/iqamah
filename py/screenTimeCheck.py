@@ -112,10 +112,18 @@ if autoScreenStatus == "1":
             comm="on"
             ran="3"
             
-    # Turn Screen Off After Isha # Turn Screen Off for the Night
-    if currentTime >= screenOffAfterIsha or currentTime < screenOnBeforeFajr:
+    # Turn Screen Off After Isha
+    if currentTime >= screenOffAfterIsha and IshaIqamah < screenOffAfterIsha:
         # if the screenOffAfterIsha >=00:00 I have to deal with it becouase it should be for next day not the same day. Now I just let the time less than 12
-        print "Turn Screen Off After Isha , Turn Screen Off for the Night"
+        print "Turn Screen Off After Isha"
+        if screenStatus == "1":
+            comm="off"
+            ran="4"
+            
+     # Turn Screen Off for the Night
+    if currentTime < screenOnBeforeFajr:
+        # if the screenOffAfterIsha >=00:00 I have to deal with it becouase it should be for next day not the same day. Now I just let the time less than 12
+        print "Turn Screen Off for the Night"
         if screenStatus == "1":
             comm="off"
             ran="4"
