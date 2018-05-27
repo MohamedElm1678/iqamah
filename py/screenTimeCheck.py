@@ -35,7 +35,7 @@ screenOffAfterDuha = Duha + timedelta(minutes=30)
 screenOffAfterDuha = screenOffAfterDuha.time()
 screenOnBeforeDhuhr = DhuhrAthan - timedelta(hours=1)
 screenOnBeforeDhuhr = screenOnBeforeDhuhr.time()
-screenOffAfterIsha = IshaIqamah + timedelta(hours=2)
+screenOffAfterIsha = IshaIqamah + timedelta(hours=1)
 screenOffAfterIsha = screenOffAfterIsha.time()
 
 # Define Midnight Time
