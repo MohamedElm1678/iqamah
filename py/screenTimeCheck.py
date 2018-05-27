@@ -90,41 +90,46 @@ if autoScreenStatus == "1":
             screenStatus="1"
         else:
             screenStatus="0"
-    print "screen="+screenStatus
+    print "screenStatus="+screenStatus
     # Turn Screen On for Fajr
     if currentTime >= screenOnBeforeFajr and currentTime < screenOffAfterDuha:
+        print "Turn Screen On for Fajr"
         if screenStatus == "0":
             comm="on"
             ran="1"
 
     # Turn Screen Off After Fajr
     if currentTime >= screenOffAfterDuha and currentTime < screenOnBeforeDhuhr:
+        print "Turn Screen Off After Fajr"
         if screenStatus == "1":
             comm="off"
             ran="2"
             
     # Turn Screen On Before Dhuhr
     if currentTime >= screenOnBeforeDhuhr and currentTime < screenOffAfterIsha:
-        print "HERE"
+        print "Turn Screen On Before Dhuhr"
         if screenStatus == "0":
             comm="on"
             ran="3"
             
     # Turn Screen Off After Isha # Turn Screen Off for the Night
     if currentTime >= screenOffAfterIsha or currentTime < screenOnBeforeFajr:
+        print "Turn Screen Off After Isha # Turn Screen Off for the Night"
         if screenStatus == "1":
             comm="off"
             ran="4"
             
     if comm=="on":
         '''
+        print "Turn ON"
         os_system('sh '+dir_local+'Chromium_Open.sh &')
         time.sleep(1.0)
         '''
         os_system('sh '+dir_local+'screen_on.sh')
         
-    if comm=="on":     
+    if comm=="off":     
         '''
+        print "Turn OFF"
         os_system('sh '+dir_local+'Chromium_Close.sh &')
         time.sleep(1.0)
         '''
