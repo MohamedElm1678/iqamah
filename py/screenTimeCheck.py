@@ -113,7 +113,7 @@ if autoScreenStatus == "1":
             ran="3"
             
     # Turn Screen Off After Isha
-    if currentTime >= screenOffAfterIsha and IshaIqamah < screenOffAfterIsha:
+    if currentTime >= screenOffAfterIsha and IshaIqamah.time() < screenOffAfterIsha:
         # if the screenOffAfterIsha >=00:00 I have to deal with it becouase it should be for next day not the same day. Now I just let the time less than 12
         print "Turn Screen Off After Isha"
         if screenStatus == "1":
