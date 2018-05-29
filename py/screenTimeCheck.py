@@ -91,7 +91,10 @@ if autoScreenStatus == "1":
             screenStatus="1"
         else:
             screenStatus="0"
-    print "screenStatus="+screenStatus
+    if screen_size!="27" and screen_size!="7":
+        print "screenStatus="+"Not here"
+    else:
+        print "screenStatus="+screenStatus
 
     
     # Turn Screen On for Fajr
