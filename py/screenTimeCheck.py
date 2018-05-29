@@ -91,6 +91,35 @@ if autoScreenStatus == "1":
         else:
             screenStatus="0"
     print "screenStatus="+screenStatus
+
+    
+    # Turn Screen On for Fajr
+    if currentTime >= screenOnBeforeFajr and currentTime < screenOffAfterDuha:
+        print "Turn Screen On for Fajr"
+        if screenStatus == "0":
+            comm="on"
+            ran="1"
+            
+    # Turn Screen Off After Isha
+    if currentTime <= screenOffAfterIsha:
+        if IshaIqamah.time() > screenOffAfterIsha:
+            if screenStatus == "0":
+                comm="on"
+                ran="2"
+        else:
+            if currentTime >= screenOnBeforeDhuhr:
+                print "Turn Screen On Before Dhuhr"
+                if screenStatus == "0":
+                    comm="on"
+                    ran="3"
+            
+
+
+    if ran=="":
+        if screenStatus == "1":
+            comm="off"
+            ran="4"
+    '''
     # Turn Screen On for Fajr
     if currentTime >= screenOnBeforeFajr and currentTime < screenOffAfterDuha:
         print "Turn Screen On for Fajr"
@@ -134,7 +163,7 @@ if autoScreenStatus == "1":
         if screenStatus == "1":
             comm="off"
             ran="4"
-            
+    '''
     if comm=="on":
         print "Turn ON"
         '''
@@ -151,10 +180,12 @@ if autoScreenStatus == "1":
         '''
         os_system('sh '+path_sh+'screen_off.sh')
 
+print "comm="+ran+"   "+"comm="+comm
+'''
 print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOnBeforeFajr)+" and " +str(currentTime )+"<"+str(  screenOffAfterDuha)
 print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOffAfterDuha)+" and " +str(currentTime )+"<"+str(  screenOnBeforeDhuhr)
 print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOnBeforeDhuhr)+" and "+str(currentTime )+"<"+str(  screenOffAfterIsha)
 print "comm="+ran+"   "+"comm="+comm+"   "+str(currentTime )+">="+str( screenOffAfterIsha)+" or "  +str(currentTime )+"<"+str(  screenOnBeforeFajr)
-
+'''
 # Sleep for a second before rerunning the loop
 #timeSleep.sleep(1)
