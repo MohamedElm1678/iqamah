@@ -106,14 +106,14 @@ if autoScreenStatus == "1":
     if currentTime < screenOffAfterIsha:
         print str(IshaIqamah.time() )+">"+str( screenOffAfterIsha)
         if IshaIqamah.time() > screenOffAfterIsha:
-            print "Turn Screen On for day"
+            print "Turn Screen On for ishaa after 12"
             if screenStatus == "0":
                 comm="on"
                 ran="2"
     else:
         print str(currentTime)+">="+str( screenOnBeforeDhuhr)
         if currentTime >= screenOnBeforeDhuhr:
-            print "Turn Screen On for ishaa after 12"
+            print "Turn Screen On for the day"
             if screenStatus == "0":
                 comm="on"
                 ran="3"
