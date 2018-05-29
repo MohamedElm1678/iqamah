@@ -75,6 +75,7 @@ else:
 '''
 comm=""
 ran=""
+used="no"
 # If There is No Override, Run Screen Check Schedule
 if autoScreenStatus == "1":
     # Check Current Time
@@ -97,6 +98,7 @@ if autoScreenStatus == "1":
     print str(currentTime )+">="+str( screenOnBeforeFajr)+" and " +str(currentTime )+"<"+str(  screenOffAfterDuha)
     if currentTime >= screenOnBeforeFajr and currentTime < screenOffAfterDuha:
         print "Turn Screen On for Fajr"
+        used="yes"
         if screenStatus == "0":
             comm="on"
             ran="1"
@@ -107,6 +109,7 @@ if autoScreenStatus == "1":
         print str(IshaIqamah.time() )+">"+str( screenOffAfterIsha)
         if IshaIqamah.time() > screenOffAfterIsha:
             print "Turn Screen On for ishaa after 12"
+            used="yes"
             if screenStatus == "0":
                 comm="on"
                 ran="2"
@@ -114,12 +117,14 @@ if autoScreenStatus == "1":
         print str(currentTime)+">="+str( screenOnBeforeDhuhr)
         if currentTime >= screenOnBeforeDhuhr:
             print "Turn Screen On for the day"
+            used="yes"
             if screenStatus == "0":
                 comm="on"
                 ran="3"
             
-    if ran=="":
+    if used!="yes":
         print "Turn Screen On other wise"
+        used="yes"
         if screenStatus == "1":
             comm="off"
             ran="4"
