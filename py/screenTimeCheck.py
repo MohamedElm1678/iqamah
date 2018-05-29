@@ -104,7 +104,7 @@ if autoScreenStatus == "1":
             ran="1"
             
     # Turn Screen On for day
-    print str(currentTime )+"<="+str( screenOffAfterIsha)
+    print str(currentTime )+"<"+str( screenOffAfterIsha)
     if currentTime < screenOffAfterIsha:
         print str(IshaIqamah.time() )+">"+str( screenOffAfterIsha)
         if IshaIqamah.time() > screenOffAfterIsha:
