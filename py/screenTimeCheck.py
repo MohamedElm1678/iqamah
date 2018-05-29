@@ -106,7 +106,14 @@ if autoScreenStatus == "1":
             ran="2"
             
     # Turn Screen On Before Dhuhr
-    if currentTime >= screenOnBeforeDhuhr and currentTime < screenOffAfterIsha:
+    if currentTime >= screenOnBeforeDhuhr and currentTime < screenOffAfterIsha and IshaIqamah.time() < screenOffAfterIsha:
+        print "Turn Screen On Before Dhuhr"
+        if screenStatus == "0":
+            comm="on"
+            ran="3"
+            
+    # Turn Screen On Before Dhuhr
+    if currentTime >= screenOnBeforeDhuhr and currentTime > screenOffAfterIsha  and IshaIqamah.time() > screenOffAfterIsha:
         print "Turn Screen On Before Dhuhr"
         if screenStatus == "0":
             comm="on"
