@@ -1,7 +1,7 @@
 # Iqamah
 Iqamah times
 
-New commnads:
+New commands:
 
 # Install
 cd ~ ; rm -Rf iqamah ; git clone https://github.com/albararamli/iqamah.git ; cd ~/iqamah/sh/ ; sh ./install.sh ; reboot
