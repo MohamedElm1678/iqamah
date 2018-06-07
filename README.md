@@ -3,10 +3,12 @@ Iqamah times
 
 
 # Install
-```cd ~; rm -Rf iqamah;
+```
+cd ~; rm -Rf iqamah;
 git clone https://github.com/albararamli/iqamah.git; 
 cd ~/iqamah/sh/; sh ./install.sh; 
-reboot;```
+reboot;
+```
 
 # Rotate the Screen 90 Degrees
 sudo nano /boot/config.txt
