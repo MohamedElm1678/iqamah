@@ -1,6 +1,7 @@
-# Iqamah
-Iqamah times
-
+# Iqamah Times App
+This app allows users in Davis/Brentwood/Sac to see:
+- Athan and Iqamah table.
+- The current time remains for the next Iqamah.
 
 # Install
 ```
