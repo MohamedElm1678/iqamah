@@ -1,5 +1,5 @@
 # Iqamah Times App
-This app allows users in Davis/Brentwood/Sac to see:
+This app allows users in Davis, Woodland, Brentwood, Sac, Madera to see:
 - Athan and Iqamah table.
 - The current time remains for the next Iqamah.
 
